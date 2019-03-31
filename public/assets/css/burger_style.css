@@ -1,0 +1,9 @@
+
+#container {
+    background-color: aquamarine;
+}
+
+
+#eatbutton, #trashbutton {
+    float: right;
+}

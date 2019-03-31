@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/annewilson2591/burger#readme",
   "dependencies": {
+    "dotenv": "^7.0.0",
     "express": "^4.16.4"
   }
 }

@@ -9,11 +9,12 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
+
 //parse app
 app.use(bodyParser.urlencoded({ extended: true }));
+
 //parse application/json
 app.use(bodyParser.json());
-
 
 //set handlebars
 var exphbs = require("express-handlebars");

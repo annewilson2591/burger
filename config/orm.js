@@ -3,11 +3,9 @@ var connection = require('../config/connection.js');
 
 function printQuestionMarks(num) {
     var arr = [];
-
     for (var i = 0; i < num; i++) {
         arr.push("?");
     }
-
     return arr.toString();
 }
 
@@ -21,7 +19,7 @@ function objToSql(ob) {
         //check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
             //if string with spaces, add quotations
-            if (typeof value === "string" && value.indexOf(" ") >=0) {
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
             arr.push(key + "=" + value);
@@ -47,7 +45,6 @@ var orm = {
     //add burger
     insertOne: function(table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
-
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
@@ -84,12 +81,12 @@ var orm = {
     },
 
     //delete burger from db
-    delete: function(table, condition, cb) {
+    deleteOne: function(table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
 
-        console.log(queryString)
+        console.log(queryString);
 
         connection.query(queryString, function(err, result) {
             if (err) {
